@@ -57,12 +57,12 @@ int main(int argc, char **argv)
 
 		printf("Another number?: (y/n)");
 		char tryAgain;
-		fscanf(stdin, "%s", &tryAgain);
+		fscanf(stdin, "%c", &tryAgain);
 		if (tryAgain == 'n')
 		{
 			ended = 1;
 		}
-	}while(ended == 0);
+	}while(!ended);
 	
 	return 0;	
 }
