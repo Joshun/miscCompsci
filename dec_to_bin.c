@@ -36,7 +36,7 @@ int process_next(int *last)
 	return remainder;
 }
 
-int main()
+int main(int argc, char **argv)
 {
 	int dec = 0;
 	int working_divisor = 0;
