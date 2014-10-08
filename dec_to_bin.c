@@ -38,20 +38,31 @@ int process_next(int *last)
 
 int main(int argc, char **argv)
 {
-	int dec = 0;
-	int working_divisor = 0;
-	num_index binary_result;
-	
-	printf("Enter number (base 10): ");
-	fscanf(stdin, "%d", &dec);
-	
-	working_divisor = dec;
-	
-	while(working_divisor != 0) {
-		add_num(process_next(&working_divisor), &binary_result);
-		//printf("%d ", process_next(&working_divisor));
-	}
-	list_nums(&binary_result);
+	int ended = 0;
+	do{
+		int dec = 0;
+		int working_divisor = 0;
+		num_index binary_result;
+		
+		printf("Enter number (base 10): ");
+		fscanf(stdin, "%d", &dec);
+		
+		working_divisor = dec;
+		
+		while(working_divisor != 0) {
+			add_num(process_next(&working_divisor), &binary_result);
+			//printf("%d ", process_next(&working_divisor));
+		}
+		list_nums(&binary_result);
+
+		printf("Another number?: (y/n)");
+		char tryAgain;
+		fscanf(stdin, "%s", &tryAgain);
+		if (tryAgain == 'n')
+		{
+			ended = 1;
+		}
+	}while(ended == 0);
 	
 	return 0;	
 }
