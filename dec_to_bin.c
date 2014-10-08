@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_VALUES 50
 
@@ -9,6 +10,10 @@ typedef struct {
 
 void add_num(int value, num_index *list)
 {
+	if( (list->num + 1) > MAX_VALUES ) {
+		printf("Error: too large\n");
+		exit(EXIT_FAILURE);
+	}
 	list->values[list->num] = value;
 	list->num++;
 }
