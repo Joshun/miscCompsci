@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 		int dec = 0;
 		int working_divisor = 0;
 		num_index binary_result;
+		binary_result.num = 0;
 		
 		printf("Enter number (base 10): ");
 		fscanf(stdin, "%d", &dec);
